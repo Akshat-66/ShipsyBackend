@@ -24,7 +24,7 @@ export const registerUser = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
 
         // Store token in cookie
-        res.cookie("jwt", token, {
+        res.cookie("_vercel_jwt", token, {
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
             httpOnly: true,
         });
@@ -51,7 +51,7 @@ export const loginUser = async (req, res) => {
         if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
-        res.cookie('jwt', token, {
+        res.cookie("_vercel_jwt", token, {
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true,
         })
@@ -64,7 +64,7 @@ export const loginUser = async (req, res) => {
 
 export const logout = async (_, res) => {
     try {
-        res.clearCookie('jwt', {
+        res.clearCookie("_vercel_jwt", {
             httpOnly: true,
         });
 
