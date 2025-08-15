@@ -12,7 +12,7 @@ export const registerUser = async (req, res) => {
         if (existingUser) {
             return res.status(400).json({ message: "User already exists" });
         }
-        console.log(username,password)
+        console.log(username, password)
         // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -27,6 +27,8 @@ export const registerUser = async (req, res) => {
         res.cookie("_vercel_jwt", token, {
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
             httpOnly: true,
+            secure: true,
+            sameSite: "lax",
         });
 
         res.status(201).json({
@@ -46,7 +48,7 @@ export const loginUser = async (req, res) => {
         const { username, password } = req.body;
         const user = await User.findOne({ username });
         if (!user) return res.status(400).json({ message: "Invalid credentials" });
-        console.log(username,password)
+        console.log(username, password)
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
@@ -54,6 +56,8 @@ export const loginUser = async (req, res) => {
         res.cookie("_vercel_jwt", token, {
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true,
+            secure: true,
+            sameSite: "lax",
         })
 
         res.status(200).json({ _id: user._id, username: user.username });
@@ -66,6 +70,8 @@ export const logout = async (_, res) => {
     try {
         res.clearCookie("_vercel_jwt", {
             httpOnly: true,
+            secure: true,
+            sameSite: "lax",
         });
 
         res.status(200).json({ message: "Logged out successfully" })
