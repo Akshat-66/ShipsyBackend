@@ -4,7 +4,6 @@ import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/auth.route.js";
 import { protect } from "./middleware/auth.middleware.js";
 import orderRoutes from "./routes/ship.route.js";
-import swagger from "./swagger.js";
 import cors from "cors";
 import cookieParser from "cookie-parser"
 dotenv.config({ path: "./.env" });
@@ -34,7 +33,6 @@ app.use((req, res, next) => {
   next();
 });
 
-swagger(app);
 // Routes
 app.use(express.json()); // Move JSON middleware before routes
 app.use("/api/auth", authRoutes);

@@ -2,16 +2,16 @@ import { User } from "../models/user.model.js";
 import { Shipment } from "../models/shipment.model.js";
 
 export const getAllOrders = async (req, res) => {
-    try {
-        const { id } = req.user;
-        const user = await User.findById(id).populate("orders");
+  try {
+    const { id } = req.user;
+    const user = await User.findById(id).populate("orders");
 
-        if (!user) return res.status(404).json({ message: "User not found" });
-        res.status(200).json({ message: "All orders retrieved successfully", orders: user.orders });
+    if (!user) return res.status(404).json({ message: "User not found" });
+    res.status(200).json({ message: "All orders retrieved successfully", orders: user.orders });
 
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 export const updateOrder = async (req, res) => {
@@ -41,7 +41,7 @@ export const updateOrder = async (req, res) => {
 
 export const createNewOrder = async (req, res) => {
   try {
-    const { id } = req.user; 
+    const { id } = req.user;
     const {
       shipmentName,
       status,
@@ -75,3 +75,28 @@ export const createNewOrder = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+
+export const deleteOrder = async (req, res) => {
+  try {
+    const { id } = req.user;
+    const { orderId } = req.params;
+
+    console.log("user : " + id);
+    console.log("order : " + orderId)
+
+    const user = await User.findById(id);
+    if (!user || !user.orders.includes(orderId))
+      return res.status(403).json({ message: "Not allowed" });
+
+    const order = await Shipment.findByIdAndDelete(orderId);
+    if (!order) return res.status(404).json({ message: "Order not found" });
+    
+    user.orders = user.orders.filter((oid) => oid.toString() !== orderId);
+    user.save();
+    res.status(200).json({ message: "Order deleted successfully", orderId });
+  } catch (error) {
+    console.error("Error:", error)
+    res.status(500).json({ error: error.message })
+  }
+}
