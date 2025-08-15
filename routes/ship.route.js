@@ -4,6 +4,6 @@ const router =express.Router();
 
 router.post("/create", createNewOrder);
 router.get("/all", getAllOrders);
-router.patch("/update", updateOrder);
+router.patch("/update/:orderId", updateOrder);
 
 export default router;

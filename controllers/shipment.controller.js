@@ -18,7 +18,8 @@ export const updateOrder = async (req, res) => {
   try {
     const { id } = req.user;
     const { orderId } = req.params;
-
+    console.log("user : " + id);
+    console.log("order : " + orderId)
     const user = await User.findById(id);
     if (!user || !user.orders.includes(orderId))
       return res.status(403).json({ message: "Not allowed" });

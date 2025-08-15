@@ -5,7 +5,7 @@ export const protect = (req, res, next) => {
   try {
     // Get token from cookie
     const token = req.cookies.jwt;
-
+    console.log(token);
     if (!token) {
       return res.status(401).json({ message: "Not authorized, no token" });
     }
