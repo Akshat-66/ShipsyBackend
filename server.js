@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8000;
 
 // Routes
 app.use("/api/auth", authRoutes);
-
+app.use("/api/order", protect, orderRoutes);
 
 app.use(express.json());
 
