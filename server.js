@@ -15,11 +15,11 @@ const PORT = process.env.PORT || 8000;
 
 app.use(cookieParser())
 
+const allowedOrigin = "https://shipsy-frontend-two.vercel.app/"; // frontend URL
+
 app.use(cors({
-  origin: (origin, callback) => {
-    callback(null, true); // allow any origin
-  },
-  credentials: true, // allow cookies
+  origin: allowedOrigin,   // not '*'
+  credentials: true,       // allow cookies
 }));
 
 app.use((req, res, next) => {
