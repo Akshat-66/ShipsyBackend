@@ -31,7 +31,7 @@ export const updateOrder = async (req, res) => {
       return res.status(404).json({ message: "Order not found" });
     }
 
-    const allowedStatuses = ["pending", "shipped", "delivered"]; // replace with your schema enum
+    const allowedStatuses = ["Pending", "In Transit", "Delivered", "Cancelled"]; // replace with your schema enum
 
     // Update only valid fields
     for (let key in req.body) {
