@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 8000;
 
 app.use(cookieParser())
 
-const allowedOrigin = "https://shipsy-frontend-two.vercel.app/";
+const allowedOrigin = "https://shipsy-frontend-two.vercel.app";
 
 app.use(cors({
   origin: allowedOrigin, // allow only your frontend
