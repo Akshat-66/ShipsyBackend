@@ -28,7 +28,8 @@ export const registerUser = async (req, res) => {
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
             httpOnly: true,
             secure: true,
-            sameSite: "lax",
+            sameSite: "none",
+            path: '/',
         });
 
         res.status(201).json({
@@ -57,7 +58,8 @@ export const loginUser = async (req, res) => {
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true,
             secure: true,
-            sameSite: "lax",
+            sameSite: "none",
+            path: '/',
         })
 
         res.status(200).json({ _id: user._id, username: user.username });
@@ -71,7 +73,8 @@ export const logout = async (_, res) => {
         res.clearCookie("_vercel_jwt", {
             httpOnly: true,
             secure: true,
-            sameSite: "lax",
+            sameSite: "none",
+            path: '/',
         });
 
         res.status(200).json({ message: "Logged out successfully" })
