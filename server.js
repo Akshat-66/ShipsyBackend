@@ -17,7 +17,7 @@ app.use(cookieParser())
 
 // Allow all origins (*)
 app.use(cors({
-  origin: "https://shipsy-frontend-two.vercel.app",
+  origin: "https://shipsy-frontend-two.vercel.app/",
   credentials: true
 }));
 
