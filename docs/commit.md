@@ -1,73 +1,35 @@
 ### Backend Commits -:
 
-
-![alt text](image.png)
-
-![alt text](image.png)
-
-![alt text](image-1.png)
-
-![alt text](image-2.png)
-
-![alt text](image-3.png)
-
-![alt text](image-4.png)
-
-![alt text](image-5.png)
-
-![alt text](image-6.png)
-
-![alt text](image-7.png)
-
-![alt text](image-8.png)
-
-![alt text](image-9.png)
-
-![alt text](image-10.png)
-
-![alt text](image-11.png)
-
-![alt text](image-12.png)
-
-![alt text](image-13.png)
-
-![alt text](image-14.png)
-
-![alt text](image-15.png)
-
-![alt text](image-16.png)
-
-![alt text](image-17.png)
-
-![alt text](image-18.png)
-
-![alt text](image-19.png)
-
-![alt text](image-20.png)
-
-![alt text](image-21.png)
+![Backend Commit 1](./backendcommits/Screenshot 2025-08-15 173026.png)
+![Backend Commit 2](./backendcommits/Screenshot 2025-08-15 175247.png)
+![Backend Commit 3](./backendcommits/Screenshot 2025-08-15 181101.png)
+![Backend Commit 4](./backendcommits/Screenshot 2025-08-15 185728.png)
+![Backend Commit 5](./backendcommits/Screenshot 2025-08-15 202521.png)
+![Backend Commit 6](./backendcommits/Screenshot 2025-08-15 203140.png)
+![Backend Commit 7](./backendcommits/Screenshot 2025-08-15 213038.png)
+![Backend Commit 8](./backendcommits/Screenshot 2025-08-16 022017.png)
+![Backend Commit 9](./backendcommits/Screenshot 2025-08-16 100043.png)
+![Backend Commit 10](./backendcommits/Screenshot 2025-08-16 100213.png)
+![Backend Commit 11](./backendcommits/Screenshot 2025-08-16 100224.png)
+![Backend Commit 12](./backendcommits/Screenshot 2025-08-16 100251.png)
+![Backend Commit 13](./backendcommits/Screenshot 2025-08-16 100301.png)
+![Backend Commit 14](./backendcommits/Screenshot 2025-08-16 100314.png)
+![Backend Commit 15](./backendcommits/Screenshot 2025-08-16 100330.png)
+![Backend Commit 16](./backendcommits/Screenshot 2025-08-16 100348.png)
+![Backend Commit 17](./backendcommits/Screenshot 2025-08-16 100356.png)
+![Backend Commit 18](./backendcommits/Screenshot 2025-08-16 100440.png)
+![Backend Commit 19](./backendcommits/Screenshot 2025-08-16 100454.png)
+![Backend Commit 20](./backendcommits/Screenshot 2025-08-16 100506.png)
 
 
+### Frontend Commits -:
 
-
-### Frontend Commits-:
-
-![alt text](image-22.png)
-
-![alt text](image-23.png)
-
-![alt text](image-24.png)
-
-![alt text](image-25.png)
-
-![alt text](image-26.png)
-
-![alt text](image-27.png)
-
-![alt text](image-28.png)
-
-![alt text](image-29.png)
-
-
-
-![alt text](image-30.png)
+![Frontend Commit 1](./frontendcommits/Screenshot 2025-08-16 021604.png)
+![Frontend Commit 2](./frontendcommits/Screenshot 2025-08-16 021729.png)
+![Frontend Commit 3](./frontendcommits/Screenshot 2025-08-16 100555.png)
+![Frontend Commit 4](./frontendcommits/Screenshot 2025-08-16 100612.png)
+![Frontend Commit 5](./frontendcommits/Screenshot 2025-08-16 100621.png)
+![Frontend Commit 6](./frontendcommits/Screenshot 2025-08-16 100635.png)
+![Frontend Commit 7](./frontendcommits/Screenshot 2025-08-16 100645.png)
+![Frontend Commit 8](./frontendcommits/Screenshot 2025-08-16 100655.png)
+![Frontend Commit 9](./frontendcommits/Screenshot 2025-08-16 100707.png)
