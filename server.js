@@ -15,19 +15,13 @@ const PORT = process.env.PORT || 8000;
 
 app.use(cookieParser())
 
-// Allow all origins (*)
-app.use(cors({
-  origin: "https://shipsy-frontend-two.vercel.app",
-  credentials: true
-}));
+const allowedOrigin = "http://localhost:3000";
 
-// Make sure cookies are sent properly
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
+app.use(cors({
+  origin: allowedOrigin, // allow only your frontend
+  credentials: true,     // allow cookies or Authorization headers
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+}));
 
 // Routes
 app.use(express.json()); // Move JSON middleware before routes

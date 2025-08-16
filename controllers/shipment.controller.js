@@ -19,25 +19,45 @@ export const updateOrder = async (req, res) => {
     const { id } = req.user;
     const { orderId } = req.params;
     console.log("user : " + id);
-    console.log("order : " + orderId)
+    console.log("order : " + orderId);
+
     const user = await User.findById(id);
-    if (!user || !user.orders.includes(orderId))
+    if (!user || !user.orders.includes(orderId)) {
       return res.status(403).json({ message: "Not allowed" });
+    }
 
     const order = await Shipment.findById(orderId);
-    if (!order) return res.status(404).json({ message: "Order not found" });
+    if (!order) {
+      return res.status(404).json({ message: "Order not found" });
+    }
 
+    const allowedStatuses = ["pending", "shipped", "delivered"]; // replace with your schema enum
+
+    // Update only valid fields
     for (let key in req.body) {
-      order[key] = req.body[key];
+      const value = req.body[key];
+      if (value === undefined || value === "") continue; // skip empty values
+
+      if (key === "status") {
+        if (!allowedStatuses.includes(value)) {
+          return res
+            .status(400)
+            .json({ message: `Invalid status value: ${value}` });
+        }
+      }
+
+      order[key] = value;
     }
 
     await order.save();
 
     res.status(200).json({ message: "Order updated", order });
   } catch (error) {
+    console.error("Update order error:", error);
     res.status(500).json({ error: error.message });
   }
 };
+
 
 export const createNewOrder = async (req, res) => {
   try {
@@ -91,7 +111,7 @@ export const deleteOrder = async (req, res) => {
 
     const order = await Shipment.findByIdAndDelete(orderId);
     if (!order) return res.status(404).json({ message: "Order not found" });
-    
+
     user.orders = user.orders.filter((oid) => oid.toString() !== orderId);
     user.save();
     res.status(200).json({ message: "Order deleted successfully", orderId });
