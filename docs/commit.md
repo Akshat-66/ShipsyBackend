@@ -22,7 +22,7 @@
 ![Backend Commit 20](./backendcommits/Screenshot 2025-08-16 100506.png)
 
 
-### Frontend Commits -:
+### Frontend Commits --:
 
 ![Frontend Commit 1](./frontendcommits/Screenshot 2025-08-16 021604.png)
 ![Frontend Commit 2](./frontendcommits/Screenshot 2025-08-16 021729.png)
